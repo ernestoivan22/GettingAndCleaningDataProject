@@ -50,6 +50,9 @@ tidy_table <- dcast(binded_table, subject + activity ~ variable, mean)
 names(tidy_table) <- sub("-m", "M", names(tidy_table))
 names(tidy_table) <- sub("-s", "S", names(tidy_table))
 names(tidy_table) <- sub("\\(\\)", "", names(tidy_table))
+names(tidy_table) <- sub("-X", "X", names(tidy_table))
+names(tidy_table) <- sub("-Y", "Y", names(tidy_table))
+names(tidy_table) <- sub("-Z", "Z", names(tidy_table))
 
 # finally save a file with the tidy data
 write.table(tidy_table, "tidyData.txt", row.names = FALSE)
